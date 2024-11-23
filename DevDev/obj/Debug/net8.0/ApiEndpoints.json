@@ -1,0 +1,66 @@
+[
+  {
+    "ContainingType": "DevDev.Controllers.ApiKeysController",
+    "Method": "CreateApiKey",
+    "RelativePath": "api/ApiKeys",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DevDev.Models.ApiKeyRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DevDev.Controllers.ApiKeysController",
+    "Method": "GetUserApiKeys",
+    "RelativePath": "api/ApiKeys",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DevDev.Controllers.ApiKeysController",
+    "Method": "RevokeApiKey",
+    "RelativePath": "api/ApiKeys/{apiKey}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "apiKey",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DevDev.Controllers.ApiKeysController",
+    "Method": "Authenticate",
+    "RelativePath": "api/ApiKeys/authenticate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DevDev.Models.AuthenticateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

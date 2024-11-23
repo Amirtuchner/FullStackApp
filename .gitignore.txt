@@ -1,0 +1,19 @@
+# Ignore Angular build files
+dist/
+node_modules/
+
+# Ignore .NET build files
+bin/
+obj/
+
+# Ignore Visual Studio files
+.vs/
+*.user
+*.suo
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore Git settings
+.git/

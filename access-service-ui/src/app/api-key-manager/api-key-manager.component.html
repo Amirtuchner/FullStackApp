@@ -1,0 +1,60 @@
+<div class="container">
+    <h1>API Key Manager</h1>
+  
+    <!-- Section to Create API Key -->
+    <section>
+      <h2>Create API Key</h2>
+      <form (ngSubmit)="createApiKey()" class="form">
+        <label for="userId">User ID:</label>
+        <input id="userId" [(ngModel)]="userId" name="userId" required />
+  
+        <label for="permissions">Permissions (comma-separated):</label>
+        <input id="permissions" [(ngModel)]="permissions" name="permissions" required />
+  
+        <button type="submit" class="btn">Create API Key</button>
+      </form>
+    </section>
+  
+    <!-- Section to Authenticate API Key -->
+    <section>
+      <h2>Authenticate API Key</h2>
+      <form (ngSubmit)="authenticate()" class="form">
+        <label for="apiKey">API Key:</label>
+        <input id="apiKey" [(ngModel)]="apiKey" name="apiKey" required />
+  
+        <button type="submit" class="btn">Generate JWT</button>
+      </form>
+    </section>
+  
+    <!-- Section to Display API Keys -->
+    <section>
+      <h2>Your API Keys</h2>
+      <button (click)="getApiKeys()" class="btn">Load API Keys</button>
+  
+      <table *ngIf="tokens.length > 0" class="table">
+        <thead>
+          <tr>
+            <th>API Key</th>
+            <th>Created At</th>
+            <th>Last Used</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let token of tokens">
+            <td>{{ token.key }}</td>
+            <td>{{ token.createdAt | date }}</td>
+            <td>{{ token.lastUsedAt ? (token.lastUsedAt | date) : 'Never' }}</td>
+            <td>{{ token.isActive ? 'Active' : 'Revoked' }}</td>
+            <td>
+              <button *ngIf="token.isActive" (click)="revokeApiKey(token.key)" class="btn danger">
+                Revoke
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+  
